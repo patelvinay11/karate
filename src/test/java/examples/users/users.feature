@@ -2,14 +2,14 @@ Feature: sample karate test script
   for help, see: https://github.com/karatelabs/karate/wiki/IDE-Support
 
   Background:
-    * url 'https://jsonplaceholder.typicode.com'
+    * url 'https://reqres.in/api/'
 
   Scenario: get all users and then get the first user by id
     Given path 'users'
     When method get
     Then status 200
 
-    * def first = response[0]
+    * def first = response.data[0]
 
     Given path 'users', first.id
     When method get
@@ -19,19 +19,12 @@ Feature: sample karate test script
     * def user =
       """
       {
-        "name": "Test User",
-        "username": "testuser",
-        "email": "test@user.com",
-        "address": {
-          "street": "Has No Name",
-          "suite": "Apt. 123",
-          "city": "Electri",
-          "zipcode": "54321-6789"
-        }
+        "name": "morpheus",
+        "job": "leader"
       }
       """
 
-    Given url 'https://jsonplaceholder.typicode.com/users'
+    Given url 'https://reqres.in/api/users'
     And request user
     When method post
     Then status 201
