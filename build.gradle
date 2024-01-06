@@ -3,11 +3,18 @@ plugins {
 }
 
 ext {
-    karateVersion = '1.4.1'
+    karateVersion = '0.9.6'
+    mockservernettyVersion = '5.11.1'
+    cucumberreportingVersion = '5.4.0'
+    extentreportsVersion = '5.0.3'
 }
 
 dependencies {
     testImplementation "com.intuit.karate:karate-junit5:${karateVersion}"
+    testImplementation "com.intuit.karate:karate-apache:${karateVersion}"
+    testImplementation "org.mock-server:mockserver-netty:${mockservernettyVersion}"
+    implementation "net.masterthought:cucumber-reporting:${cucumberreportingVersion}"
+    implementation "com.aventstack:extentreports:${extentreportsVersion}"
 }
 
 sourceSets {
