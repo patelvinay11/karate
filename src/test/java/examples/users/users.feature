@@ -4,6 +4,7 @@ Feature: sample karate test script
   Background:
     * url 'https://reqres.in/api/'
 
+  @debug
   Scenario: get all users and then get the first user by id and then get the users on 2nd page
     Given path 'users'
     When method get
