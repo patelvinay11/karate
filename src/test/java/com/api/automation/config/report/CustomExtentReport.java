@@ -57,7 +57,7 @@ public class CustomExtentReport {
 			extentSparkReporter = new ExtentSparkReporter(reportDir);
 			extentReports.attachReporter(extentSparkReporter);
 			setConfig();
-			// 2. Using the testReults, Get the list of scenario results
+			// 2. Using the testResults, Get the list of scenario results
 			List<ScenarioResult> scenarioResults = getScenarioResults();
 			scenarioResults = scenarioResults.stream().filter((name) -> {
 				return (name.getScenario().getName() != null) && !(name.getScenario().getName().isEmpty());
@@ -70,7 +70,7 @@ public class CustomExtentReport {
 				String featureDesc = getFeatureDesc(scenarioResult);
 				ExtentTest featureNode = createFeatureNode(featureName, featureDesc);
 				// 6. Using the same scenario object, we will get the info about the scenario
-				String scenarioTitle = getSecnarioTitle(scenarioResult);
+				String scenarioTitle = getScenarioTitle(scenarioResult);
 				ExtentTest scenarioNode = createScenarioNode(featureNode, scenarioTitle);
 				// 7. Using the Scenario Result get the list of step result
 				// 8. loop over the step result list, get the info about scenario step and its
@@ -88,7 +88,7 @@ public class CustomExtentReport {
 	}
 
 	private List<ScenarioResult> getScenarioResults() {
-		return this.testResults.getScenarioResults();
+		return (List<ScenarioResult>) this.testResults.getScenarioResults();
 	}
 
 	private String getFeatureName(ScenarioResult scenarioResult) {
@@ -123,7 +123,7 @@ public class CustomExtentReport {
 		return scenarioNode;
 	}
 
-	private String getSecnarioTitle(ScenarioResult scenarioResult) {
+	private String getScenarioTitle(ScenarioResult scenarioResult) {
 		return scenarioResult.getScenario().getName();
 
 	}

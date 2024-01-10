@@ -24,9 +24,10 @@ public class ParallelBuilderWithCucumberReport {
 		aRunner.path("classpath:com/api/automation");
 		// aRunner.parallel(5);
 		Results result = aRunner.parallel(5);
-		System.out.println("Total Feature => " + result.getFeatureCount());
-		System.out.println("Total Scenarios => " + result.getScenarioCount());
-		System.out.println("Passed Scenarios => " + result.getPassCount());
+		System.out.println("Total Feature => " + result.getFeaturesTotal());
+		System.out.println("Total Scenarios => " + result.getScenariosTotal());
+		System.out.println("Passed Scenarios => " + result.getScenariosPassed());
+		System.out.println("Failed Scenarios => " + result.getScenariosFailed());
 		generateCucumberReport(result.getReportDir());
 		Assertions.assertEquals(0, result.getFailCount(), "There are Some Failed Scenarios ");
 		
