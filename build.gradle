@@ -4,9 +4,9 @@ plugins {
 
 ext {
     karatejunitVersion = '1.4.1'
-    mockservernettyVersion = '5.11.1'
-    cucumberreportingVersion = '5.4.0'
-    extentreportsVersion = '5.0.3'
+    mockservernettyVersion = '5.15.0'
+    cucumberreportingVersion = '5.7.7'
+    extentreportsVersion = '5.1.1'
 }
 
 dependencies {
