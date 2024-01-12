@@ -6,7 +6,7 @@ import com.api.automation.config.report.CustomExtentReport;
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner.Builder;
 
-public class ParalleRunnerWithExtentReport {
+public class ParalleRunner2WithExtentReport {
 	@Test
 	public void executeKarateTest() {
 		Builder aRunner = new Builder();
