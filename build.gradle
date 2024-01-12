@@ -12,8 +12,8 @@ ext {
 dependencies {
     testImplementation "com.intuit.karate:karate-junit5:${karatejunitVersion}"
     testImplementation "org.mock-server:mockserver-netty:${mockservernettyVersion}"
-    implementation "net.masterthought:cucumber-reporting:${cucumberreportingVersion}"
-    implementation "com.aventstack:extentreports:${extentreportsVersion}"
+    testImplementation "net.masterthought:cucumber-reporting:${cucumberreportingVersion}"
+    testImplementation "com.aventstack:extentreports:${extentreportsVersion}"
 }
 
 sourceSets {
