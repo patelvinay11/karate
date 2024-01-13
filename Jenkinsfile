@@ -53,9 +53,9 @@ pipeline{
     }
     post {
         always {
-            junit 'build/surefire-reports/*.xml'
-            cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/surefire-reports', pendingStepsNumber: -1, reportTitle: 'Karate Test Execution', skipEmptyJSONFiles: true, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
-            zip zipFile:'build/test-result.zip', archive: true, dir: 'build/surefire-reports', overwrite: true
+            junit 'build/karate-reports/*.xml'
+            cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/karate-reports', pendingStepsNumber: -1, reportTitle: 'Karate Test Execution', skipEmptyJSONFiles: true, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+            zip zipFile:'build/test-result.zip', archive: true, dir: 'build/karate-reports', overwrite: true
             //emailext subject: "Job '${env.JOB_NAME} - ${env.BUILD_NUMBER} '", body: 'Refer to the attachment', attachmentsPattern: 'build/test-result.zip', to: 'user2@autoreply.com'
         }
 
